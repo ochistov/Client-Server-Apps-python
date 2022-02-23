@@ -14,3 +14,37 @@
 2022-02-20 15:18:25,956 - INFO     - client   - Data received from ('127.0.0.1', 7777) : {'response': '404', 'time': '2022-02-20 15:17:26', 'alert': 'Not found'} 
 2022-02-20 15:18:25,956 - INFO     - client   - Response not equal 200, closing connection 
 2022-02-20 15:18:25,956 - DEBUG    - client   - Client.py will be stopped 
+2022-02-23 22:49:37,957 - DEBUG    - client   - Client.py started 
+2022-02-23 22:49:40,551 - DEBUG    - utils    - Function "createParser" is called into "<module>" 
+2022-02-23 22:49:40,566 - DEBUG    - utils    - Function "getClientSocket" is called into "<module>" 
+2022-02-23 22:49:40,566 - INFO     - client   - Connected to server: 127.0.0.1:7777 
+2022-02-23 22:49:40,582 - DEBUG    - utils    - Function "sendData" is called into "<module>" 
+2022-02-23 22:49:40,582 - INFO     - client   - Presence successfully sended to ('127.0.0.1', 7777) : {'action': 'presence', 'time': '2022-02-23 22:49:37', 'type': 'status', 'user': {'account_name': 'test'}} 
+2022-02-23 22:49:40,582 - DEBUG    - utils    - Function "getData" is called into "<module>" 
+2022-02-23 22:49:40,582 - INFO     - client   - Data received from ('127.0.0.1', 7777) : {'response': '200', 'time': '2022-02-23 22:49:25', 'alert': 'OK'} 
+2022-02-23 22:49:43,146 - DEBUG    - utils    - Function "sendData" is called into "<module>" 
+2022-02-23 22:49:43,146 - INFO     - client   - Data successfully sended to ('127.0.0.1', 7777) : {'action': 'msg', 'time': '2022-02-23 22:49:37', 'message': 'hello'} 
+2022-02-23 22:49:43,146 - DEBUG    - utils    - Function "getData" is called into "<module>" 
+2022-02-23 22:49:43,146 - INFO     - client   - Data received from ('127.0.0.1', 7777) : {'response': '200', 'time': '2022-02-23 22:49:25', 'alert': 'OK'} 
+2022-02-23 22:49:46,477 - DEBUG    - utils    - Function "sendData" is called into "<module>" 
+2022-02-23 22:49:46,478 - INFO     - client   - Data successfully sended to ('127.0.0.1', 7777) : {'action': 'msg', 'time': '2022-02-23 22:49:37', 'message': "it's test"} 
+2022-02-23 22:49:46,478 - DEBUG    - utils    - Function "getData" is called into "<module>" 
+2022-02-23 22:49:46,478 - INFO     - client   - Data received from ('127.0.0.1', 7777) : {'response': '200', 'time': '2022-02-23 22:49:25', 'alert': 'OK'} 
+2022-02-23 22:49:53,188 - DEBUG    - utils    - Function "sendData" is called into "<module>" 
+2022-02-23 22:49:53,188 - INFO     - client   - Data successfully sended to ('127.0.0.1', 7777) : {'action': 'msg', 'time': '2022-02-23 22:49:37', 'message': 'anybody here?'} 
+2022-02-23 22:49:53,188 - DEBUG    - utils    - Function "getData" is called into "<module>" 
+2022-02-23 22:49:53,188 - INFO     - client   - Data received from ('127.0.0.1', 7777) : {'response': '200', 'time': '2022-02-23 22:49:25', 'alert': 'OK'} 
+2022-02-23 22:49:54,836 - DEBUG    - utils    - Function "sendData" is called into "<module>" 
+2022-02-23 22:49:54,836 - INFO     - client   - Data successfully sended to ('127.0.0.1', 7777) : {'action': 'msg', 'time': '2022-02-23 22:49:37', 'message': 'okey'} 
+2022-02-23 22:49:54,852 - DEBUG    - utils    - Function "getData" is called into "<module>" 
+2022-02-23 22:49:54,852 - INFO     - client   - Data received from ('127.0.0.1', 7777) : {'response': '200', 'time': '2022-02-23 22:49:25', 'alert': 'OK'} 
+2022-02-23 22:49:57,902 - DEBUG    - utils    - Function "sendData" is called into "<module>" 
+2022-02-23 22:49:57,902 - INFO     - client   - Data successfully sended to ('127.0.0.1', 7777) : {'action': 'msg', 'time': '2022-02-23 22:49:37', 'message': 'goodbye'} 
+2022-02-23 22:49:57,902 - DEBUG    - utils    - Function "getData" is called into "<module>" 
+2022-02-23 22:49:57,902 - INFO     - client   - Data received from ('127.0.0.1', 7777) : {'response': '200', 'time': '2022-02-23 22:49:25', 'alert': 'OK'} 
+2022-02-23 22:49:59,393 - DEBUG    - utils    - Function "sendData" is called into "<module>" 
+2022-02-23 22:49:59,393 - INFO     - client   - Data successfully sended to ('127.0.0.1', 7777) : {'action': 'msg', 'time': '2022-02-23 22:49:37', 'message': 'exit'} 
+2022-02-23 22:49:59,409 - DEBUG    - utils    - Function "getData" is called into "<module>" 
+2022-02-23 22:49:59,409 - INFO     - client   - Data received from ('127.0.0.1', 7777) : {'response': '404', 'time': '2022-02-23 22:49:25', 'alert': 'Not found'} 
+2022-02-23 22:49:59,409 - INFO     - client   - Response not equal 200, closing connection 
+2022-02-23 22:49:59,409 - DEBUG    - client   - Client.py will be stopped 
