@@ -1,16 +1,102 @@
-2022-02-20 15:17:26,478 - DEBUG    - server   - Server.py was started 
-2022-02-20 15:17:26,488 - INFO     - server   - Server started at 127.0.0.1:7777 
-2022-02-20 15:17:35,925 - INFO     - server   - Client connected from 127.0.0.1:1375 
-2022-02-20 15:17:35,925 - INFO     - server   - Data successfully received from ('127.0.0.1', 1375) : {'action': 'presence', 'time': '2022-02-20 15:17:29', 'type': 'status', 'user': {'account_name': 'testUser'}} 
-2022-02-20 15:17:35,925 - INFO     - server   - Data successfully sended to ('127.0.0.1', 1375) : {'response': '200', 'time': '2022-02-20 15:17:26', 'alert': 'OK'} 
-2022-02-20 15:17:38,670 - INFO     - server   - Data successfully received from ('127.0.0.1', 1375) : {'action': 'msg', 'time': '2022-02-20 15:17:29', 'message': 'hello'} 
-2022-02-20 15:17:38,686 - INFO     - server   - Data successfully sended to ('127.0.0.1', 1375) : {'response': '200', 'time': '2022-02-20 15:17:26', 'alert': 'OK'} 
-2022-02-20 15:17:47,469 - INFO     - server   - Data successfully received from ('127.0.0.1', 1375) : {'action': 'msg', 'time': '2022-02-20 15:17:29', 'message': "it's just testing of logs"} 
-2022-02-20 15:17:47,469 - INFO     - server   - Data successfully sended to ('127.0.0.1', 1375) : {'response': '200', 'time': '2022-02-20 15:17:26', 'alert': 'OK'} 
-2022-02-20 15:18:15,182 - INFO     - server   - Data successfully received from ('127.0.0.1', 1375) : {'action': 'msg', 'time': '2022-02-20 15:17:29', 'message': 'the quick bron fox jumps over the lazy dog'} 
-2022-02-20 15:18:15,182 - INFO     - server   - Data successfully sended to ('127.0.0.1', 1375) : {'response': '200', 'time': '2022-02-20 15:17:26', 'alert': 'OK'} 
-2022-02-20 15:18:24,454 - INFO     - server   - Data successfully received from ('127.0.0.1', 1375) : {'action': 'msg', 'time': '2022-02-20 15:17:29', 'message': 'goodbye'} 
-2022-02-20 15:18:24,454 - INFO     - server   - Data successfully sended to ('127.0.0.1', 1375) : {'response': '200', 'time': '2022-02-20 15:17:26', 'alert': 'OK'} 
-2022-02-20 15:18:25,956 - INFO     - server   - Data successfully received from ('127.0.0.1', 1375) : {'action': 'msg', 'time': '2022-02-20 15:17:29', 'message': 'exit'} 
-2022-02-20 15:18:25,956 - INFO     - server   - Data successfully sended to ('127.0.0.1', 1375) : {'response': '404', 'time': '2022-02-20 15:17:26', 'alert': 'Not found'} 
-2022-02-20 15:18:25,956 - DEBUG    - server   - Server.py will be stopped 
+2022-02-27 19:45:22,136 - DEBUG    - server   - Server.py was started 
+2022-02-27 19:45:22,171 - DEBUG    - utils    - Function "createParser" is called into "<module>" 
+2022-02-27 19:45:22,187 - DEBUG    - utils    - Function "getServerSocket" is called into "<module>" 
+2022-02-27 19:45:22,193 - INFO     - server   - Server started at 127.0.0.1:7777 
+2022-02-27 19:45:51,263 - DEBUG    - server   - Server.py was started 
+2022-02-27 19:45:51,479 - DEBUG    - utils    - Function "createParser" is called into "<module>" 
+2022-02-27 19:45:51,491 - DEBUG    - utils    - Function "getServerSocket" is called into "<module>" 
+2022-02-27 19:46:44,418 - DEBUG    - server   - Server.py was started 
+2022-02-27 19:46:44,623 - DEBUG    - utils    - Function "createParser" is called into "<module>" 
+2022-02-27 19:46:44,638 - DEBUG    - utils    - Function "getServerSocket" is called into "<module>" 
+2022-02-27 19:46:59,488 - INFO     - server   - Server started at 127.0.0.1:7777 
+2022-02-27 19:52:12,324 - DEBUG    - server   - Server.py was started 
+2022-02-27 19:52:12,371 - DEBUG    - utils    - Function "createParser" is called into "<module>" 
+2022-02-27 19:52:12,371 - DEBUG    - utils    - Function "getServerSocket" is called into "<module>" 
+2022-02-27 19:52:12,389 - INFO     - server   - Server started at 127.0.0.1:7777 
+2022-02-27 19:52:21,344 - INFO     - server   - Client connected from ('127.0.0.1', 1321) 
+2022-02-27 19:52:21,847 - DEBUG    - utils    - Function "getData" is called into "<module>" 
+2022-02-27 19:52:21,847 - INFO     - server   - Client ('127.0.0.1', 1321) was disconnected from server. 
+2022-02-27 20:27:29,629 - DEBUG    - server   - Server.py was started 
+2022-02-27 20:27:29,660 - DEBUG    - utils    - Function "createServerParser" is called into "<module>" 
+2022-02-27 20:27:29,676 - DEBUG    - utils    - Function "getServerSocket" is called into "<module>" 
+2022-02-27 20:27:29,676 - INFO     - server   - Server started at 127.0.0.1:7777 
+2022-02-27 20:27:57,468 - INFO     - server   - Client connected from ('127.0.0.1', 1228) 
+2022-02-27 20:27:57,970 - DEBUG    - utils    - Function "getData" is called into "<module>" 
+2022-02-27 20:27:57,970 - DEBUG    - utils    - Function "processClientMessage" is called into "<module>" 
+2022-02-27 20:27:57,970 - DEBUG    - utils    - Function "sendData" is called into "processClientMessage" 
+2022-02-27 20:27:58,477 - DEBUG    - utils    - Function "getData" is called into "<module>" 
+2022-02-27 20:27:58,478 - INFO     - server   - Client ('127.0.0.1', 1228) was disconnected from server. 
+2022-02-27 20:28:23,151 - INFO     - server   - Client connected from ('127.0.0.1', 1230) 
+2022-02-27 20:28:23,660 - DEBUG    - utils    - Function "getData" is called into "<module>" 
+2022-02-27 20:28:23,661 - DEBUG    - utils    - Function "processClientMessage" is called into "<module>" 
+2022-02-27 20:28:23,664 - DEBUG    - utils    - Function "sendData" is called into "processClientMessage" 
+2022-02-27 20:28:24,176 - DEBUG    - utils    - Function "getData" is called into "<module>" 
+2022-02-27 20:28:24,176 - INFO     - server   - Client ('127.0.0.1', 1230) was disconnected from server. 
+2022-02-27 20:29:43,765 - INFO     - server   - Client connected from ('127.0.0.1', 1246) 
+2022-02-27 20:30:46,165 - DEBUG    - utils    - Function "getData" is called into "<module>" 
+2022-02-27 20:30:46,165 - DEBUG    - utils    - Function "processClientMessage" is called into "<module>" 
+2022-02-27 20:30:46,165 - DEBUG    - utils    - Function "sendData" is called into "processClientMessage" 
+2022-02-27 20:32:07,779 - DEBUG    - utils    - Function "getData" is called into "<module>" 
+2022-02-27 20:32:07,779 - INFO     - server   - Client ('127.0.0.1', 1246) was disconnected from server. 
+2022-02-27 20:41:04,960 - DEBUG    - server   - Server.py was started 
+2022-02-27 20:41:04,999 - DEBUG    - utils    - Function "createServerParser" is called into "<module>" 
+2022-02-27 20:41:05,007 - DEBUG    - utils    - Function "getServerSocket" is called into "<module>" 
+2022-02-27 20:41:05,023 - INFO     - server   - Server started at 127.0.0.1:7777 
+2022-02-27 20:41:08,287 - INFO     - server   - Client connected from ('127.0.0.1', 1354) 
+2022-02-27 20:41:08,789 - DEBUG    - utils    - Function "getData" is called into "<module>" 
+2022-02-27 20:41:08,789 - DEBUG    - utils    - Function "processClientMessage" is called into "<module>" 
+2022-02-27 20:41:08,789 - DEBUG    - utils    - Function "sendData" is called into "processClientMessage" 
+2022-02-27 20:41:13,814 - DEBUG    - utils    - Function "getData" is called into "<module>" 
+2022-02-27 20:41:13,814 - DEBUG    - utils    - Function "processClientMessage" is called into "<module>" 
+2022-02-27 20:41:13,814 - DEBUG    - utils    - Function "sendData" is called into "<module>" 
+2022-02-27 20:41:16,833 - DEBUG    - utils    - Function "getData" is called into "<module>" 
+2022-02-27 20:41:16,833 - DEBUG    - utils    - Function "processClientMessage" is called into "<module>" 
+2022-02-27 20:41:16,833 - DEBUG    - utils    - Function "sendData" is called into "<module>" 
+2022-02-27 20:41:23,364 - INFO     - server   - Client connected from ('127.0.0.1', 1366) 
+2022-02-27 20:41:23,866 - DEBUG    - utils    - Function "getData" is called into "<module>" 
+2022-02-27 20:41:23,866 - DEBUG    - utils    - Function "processClientMessage" is called into "<module>" 
+2022-02-27 20:41:23,866 - DEBUG    - utils    - Function "sendData" is called into "processClientMessage" 
+2022-02-27 20:41:28,403 - DEBUG    - utils    - Function "getData" is called into "<module>" 
+2022-02-27 20:41:28,403 - DEBUG    - utils    - Function "processClientMessage" is called into "<module>" 
+2022-02-27 20:41:28,403 - DEBUG    - utils    - Function "sendData" is called into "<module>" 
+2022-02-27 20:41:28,403 - DEBUG    - utils    - Function "sendData" is called into "<module>" 
+2022-02-27 20:41:33,932 - DEBUG    - utils    - Function "getData" is called into "<module>" 
+2022-02-27 20:41:33,932 - DEBUG    - utils    - Function "processClientMessage" is called into "<module>" 
+2022-02-27 20:41:33,932 - DEBUG    - utils    - Function "sendData" is called into "<module>" 
+2022-02-27 20:41:33,932 - DEBUG    - utils    - Function "sendData" is called into "<module>" 
+2022-02-27 20:41:39,969 - DEBUG    - utils    - Function "getData" is called into "<module>" 
+2022-02-27 20:41:39,969 - DEBUG    - utils    - Function "processClientMessage" is called into "<module>" 
+2022-02-27 20:41:39,969 - DEBUG    - utils    - Function "sendData" is called into "<module>" 
+2022-02-27 20:41:39,969 - DEBUG    - utils    - Function "sendData" is called into "<module>" 
+2022-02-27 20:41:52,036 - DEBUG    - utils    - Function "getData" is called into "<module>" 
+2022-02-27 20:41:52,036 - INFO     - server   - Client ('127.0.0.1', 1354) was disconnected from server. 
+2022-02-27 20:43:21,484 - DEBUG    - server   - Server.py was started 
+2022-02-27 20:43:21,515 - DEBUG    - utils    - Function "createServerParser" is called into "<module>" 
+2022-02-27 20:43:21,531 - DEBUG    - utils    - Function "getServerSocket" is called into "<module>" 
+2022-02-27 20:43:21,548 - INFO     - server   - Server started at 127.0.0.1:7777 
+2022-02-27 20:43:27,568 - INFO     - server   - Client connected from ('127.0.0.1', 1383) 
+2022-02-27 20:43:28,069 - DEBUG    - utils    - Function "getData" is called into "<module>" 
+2022-02-27 20:43:28,069 - DEBUG    - utils    - Function "processClientMessage" is called into "<module>" 
+2022-02-27 20:43:28,069 - DEBUG    - utils    - Function "sendData" is called into "processClientMessage" 
+2022-02-27 20:43:36,972 - INFO     - server   - Client connected from ('127.0.0.1', 1385) 
+2022-02-27 20:43:37,475 - DEBUG    - utils    - Function "getData" is called into "<module>" 
+2022-02-27 20:43:37,475 - DEBUG    - utils    - Function "processClientMessage" is called into "<module>" 
+2022-02-27 20:43:37,475 - DEBUG    - utils    - Function "sendData" is called into "processClientMessage" 
+2022-02-27 20:43:42,510 - DEBUG    - utils    - Function "getData" is called into "<module>" 
+2022-02-27 20:43:42,510 - DEBUG    - utils    - Function "processClientMessage" is called into "<module>" 
+2022-02-27 20:43:42,510 - DEBUG    - utils    - Function "sendData" is called into "<module>" 
+2022-02-27 20:43:42,510 - DEBUG    - utils    - Function "sendData" is called into "<module>" 
+2022-02-27 20:43:48,039 - DEBUG    - utils    - Function "getData" is called into "<module>" 
+2022-02-27 20:43:48,039 - DEBUG    - utils    - Function "processClientMessage" is called into "<module>" 
+2022-02-27 20:43:48,039 - DEBUG    - utils    - Function "sendData" is called into "<module>" 
+2022-02-27 20:43:48,039 - DEBUG    - utils    - Function "sendData" is called into "<module>" 
+2022-02-27 20:43:53,060 - DEBUG    - utils    - Function "getData" is called into "<module>" 
+2022-02-27 20:43:53,060 - DEBUG    - utils    - Function "processClientMessage" is called into "<module>" 
+2022-02-27 20:43:53,060 - DEBUG    - utils    - Function "sendData" is called into "<module>" 
+2022-02-27 20:43:53,060 - DEBUG    - utils    - Function "sendData" is called into "<module>" 
+2022-02-27 20:43:58,082 - DEBUG    - utils    - Function "getData" is called into "<module>" 
+2022-02-27 20:43:58,082 - DEBUG    - utils    - Function "processClientMessage" is called into "<module>" 
+2022-02-27 20:43:58,082 - DEBUG    - utils    - Function "sendData" is called into "<module>" 
+2022-02-27 20:43:58,082 - DEBUG    - utils    - Function "sendData" is called into "<module>" 
+2022-02-27 20:44:01,606 - DEBUG    - utils    - Function "getData" is called into "<module>" 
+2022-02-27 20:44:01,606 - INFO     - server   - Client ('127.0.0.1', 1383) was disconnected from server. 

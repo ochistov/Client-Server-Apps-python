@@ -1,32 +1,20 @@
 from datetime import datetime
 
 TIME = datetime.now().replace(microsecond=0).isoformat(sep=' ')
+DEFAULT_PORT = 7777
+DEFAULT_IP_ADDRESS = '127.0.0.1'
+MAX_CONNECTIONS = 5
+MAX_PACKAGE_LENGTH = 1024
+ENCODING = 'utf-8'
 
-ENCODING = 'UTF-8'
+ACTION = 'action'
+TIME = 'time'
+USER = 'user'
+ACCOUNT_NAME = 'account_name'
+SENDER = 'sender'
 
-RESPONSE = {
-    "response": None,
-    "time": str(TIME),
-    "alert": None
-}
-
-PRESENCE = {
-    "action": "presence",
-    "time": str(TIME),
-    "type": "status",
-    "user": {
-        "account_name": "GUEST"
-    }
-}
-
-MESSAGE = {
-    "action": "msg",
-    "time": str(TIME),
-    "message": None
-}
-
-SERVER_RESPONSE = (
-    ('200', 'OK'),
-    ('401', 'Not authorized'),
-    ('404', 'Not found')
-)
+PRESENCE = 'presence'
+RESPONSE = 'response'
+ERROR = 'error'
+MESSAGE = 'message'
+MESSAGE_TEXT = 'mess_text'
