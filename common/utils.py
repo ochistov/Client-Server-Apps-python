@@ -67,11 +67,11 @@ def createClientParser():
     parser = argparse.ArgumentParser()
     parser.add_argument('addr', default=v.DEFAULT_IP_ADDRESS, nargs='?')
     parser.add_argument('port', default=v.DEFAULT_PORT, type=int, nargs='?')
-    parser.add_argument('-m', '--mode', default='listen', nargs='?')
+    parser.add_argument('-n', '--name', default=None, nargs='?')
     namespace = parser.parse_args(sys.argv[1:])
     serverAddress = namespace.addr
     serverPort = namespace.port
-    clientMode = namespace.mode
+    clientName = namespace.name
 
     if not 1023 < serverPort < 65536:
         clientLogger.critical(
@@ -79,23 +79,30 @@ def createClientParser():
             f'There are only ports from 1024 to 65535 allowed. Client.py stops.')
         sys.exit(1)
 
-    if clientMode not in ('listen', 'send'):
-        clientLogger.critical(f'Incorrect client mode: {clientMode}, '
-                        f'correct modes: listen , send')
-        sys.exit(1)
-
-    return serverAddress, serverPort, clientMode
+    return serverAddress, serverPort, clientName
 
 @log
-def processClientMessage(message, messagesList, client):
-    if v.ACTION in message and message[v.ACTION] == v.PRESENCE and v.TIME in message \
-            and v.USER in message and message[v.USER][v.ACCOUNT_NAME] == 'Guest':
-        sendData(client, {v.RESPONSE: 200})
+def processClientMessage(message, messagesList, client, clients, names):
+    if v.ACTION in message and message[v.ACTION] == v.PRESENCE and v.TIME in message and v.USER in message:
+        if message[v.USER][v.ACCOUNT_NAME] not in names.keys():
+            names[message[v.USER][v.ACCOUNT_NAME]] = client
+            sendData(client, {v.RESPONSE: 200})
+        else:
+            response = {v.RESPONSE: 400}
+            response[v.ERROR] = 'Username is currently in use.'
+            sendData(client, response)
+            clients.remove(client)
+            client.close()
         return
 
-    elif v.ACTION in message and message[v.ACTION] == v.MESSAGE and \
-            v.TIME in message and v.MESSAGE_TEXT in message:
-        messagesList.append((message[v.ACCOUNT_NAME], message[v.MESSAGE_TEXT]))
+    elif v.ACTION in message and message[v.ACTION] == v.MESSAGE and v.TIME in message and v.MESSAGE_TEXT in message:
+        messagesList.append(message)
+        return
+
+    elif v.ACTION in message and message[v.ACTION] == v.EXIT and v.ACCOUNT_NAME in message:
+        clients.remove(names[message[v.ACCOUNT_NAME]])
+        names[message[v.ACCOUNT_NAME]].close()
+        del names[message[v.ACCOUNT_NAME]]
         return
 
     else:
@@ -104,20 +111,43 @@ def processClientMessage(message, messagesList, client):
             v.ERROR: 'Bad Request'
         })
         return
-    
+
+def showHelp():
+    print('Supported commands:')
+    print('message - send message. Receeiver and text will be asked later')
+    print('help - show help')
+    print('exit - close messager')
+
 @log
-def messageFromServer(message):
-    if v.ACTION in message and message[v.ACTION] == v.MESSAGE and \
-            v.SENDER in message and v.MESSAGE_TEXT in message:
-        print(f'Received message from user '
-              f'{message[v.SENDER]}:\n{message[v.MESSAGE_TEXT]}')
-        clientLogger.info(f'Received message from user '
-                    f'{message[v.SENDER]}:\n{message[v.MESSAGE_TEXT]}')
-    else:
-        clientLogger.error(f'Received incorrect message from server: {message}')
+def messageFromServer(sock, myUsername):
+    while True:
+        try:
+            message = getData(sock)
+            if v.ACTION in message and message[v.ACTION] == v.MESSAGE and v.SENDER in message and v.DESTINATION in message and v.MESSAGE_TEXT in message and message[v.DESTINATION] == myUsername:
+                print(f'\nReceived message from user {message[v.SENDER]}:'
+                      f'\n{message[v.MESSAGE_TEXT]}')
+                clientLogger.info(f'Received message from user {message[v.SENDER]}:'
+                            f'\n{message[v.MESSAGE_TEXT]}')
+            else:
+                clientLogger.error(f'Incorrect message received from server: {message}')
+        except errors.IncorrectDataRecievedError:
+            clientLogger.error(f'Decoding of received message failed.')
+        except (OSError, ConnectionError, ConnectionAbortedError,
+                ConnectionResetError, json.JSONDecodeError):
+            clientLogger.critical(f'Connection to server has been lost.')
+            break
+    # if v.ACTION in message and message[v.ACTION] == v.MESSAGE and \
+    #         v.SENDER in message and v.MESSAGE_TEXT in message:
+    #     print(f'Received message from user '
+    #           f'{message[v.SENDER]}:\n{message[v.MESSAGE_TEXT]}')
+    #     clientLogger.info(f'Received message from user '
+    #                 f'{message[v.SENDER]}:\n{message[v.MESSAGE_TEXT]}')
+    # else:
+    #     clientLogger.error(f'Received incorrect message from server: {message}')
 
 @log
 def createMessage(sock, accountName='Guest'):
+    toUser = input('Insert username of message receiver: ')
     message = input('Insert message to send or "exit" to exit: ')
     if message == 'exit':
         sock.close()
@@ -127,14 +157,22 @@ def createMessage(sock, accountName='Guest'):
     messageDict = {
         v.ACTION: v.MESSAGE,
         v.TIME: time.time(),
-        v.ACCOUNT_NAME: accountName,
+        v.SENDER: accountName,
+        v.DESTINATION: toUser,
         v.MESSAGE_TEXT: message
     }
     clientLogger.debug(f'Message dictionary was formed: {messageDict}')
-    return messageDict
+    try:
+        sendData(sock, messageDict)
+        clientLogger.info(f'message was sent to user {toUser}')
+    except Exception as e:
+        print(e)
+        clientLogger.critical('Connection to server was lost.')
+        sys.exit(1)
+    #return messageDict
 
 @log
-def createPresence(accountName='Guest'):
+def createPresence(accountName):
     out = {
         v.ACTION: v.PRESENCE,
         v.TIME: time.time(),
@@ -146,6 +184,29 @@ def createPresence(accountName='Guest'):
     return out
 
 @log
+def createExitMessage(accountName):
+    return {
+        v.ACTION: v.EXIT,
+        v.TIME: time.time(),
+        v.ACCOUNT_NAME: accountName
+    }
+
+
+@log
+def processMessage(message, names, listenSocks):
+    if message[v.DESTINATION] in names and names[message[v.DESTINATION]] in listenSocks:
+        sendData(names[message[v.DESTINATION]], message)
+        serverLogger.info(f'Message was sent to user {message[v.DESTINATION]} '
+                    f'from user {message[v.SENDER]}.')
+    elif message[v.DESTINATION] in names and names[message[v.DESTINATION]] not in listenSocks:
+        raise ConnectionError
+    else:
+        serverLogger.error(
+            f'User {message[v.DESTINATION]} is not connected, '
+            f'unable to send message.')
+
+
+@log
 def processResponseAns(message):
     clientLogger.debug(f'Response answer from server: {message}')
     if v.RESPONSE in message:
@@ -155,3 +216,20 @@ def processResponseAns(message):
             raise errors.ServerError(f'400 : {message[v.ERROR]}')
     raise errors.ReqFieldMissingError(v.RESPONSE)
 
+@log
+def userInteractive(sock, username):
+    showHelp()
+    while True:
+        command = input('Insert command: ')
+        if command == 'message':
+            createMessage(sock, username)
+        elif command == 'help':
+            showHelp()
+        elif command == 'exit':
+            sendData(sock, createExitMessage(username))
+            print('Connection closed.')
+            clientLogger.info('Connection closed by user.')
+            time.sleep(0.5)
+            break
+        else:
+            print('Wrong command, please try again. help - show supported commands.')

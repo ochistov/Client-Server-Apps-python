@@ -23,7 +23,9 @@ if __name__ == '__main__':
 
     clients = []
     messages = []
+    names = dict()
 
+    sock.listen(v.MAX_CONNECTIONS)
     while True:
         try:
             client, clientAddress = sock.accept()
@@ -47,27 +49,38 @@ if __name__ == '__main__':
             for clientWithMessage in recvDataList:
                 try:
                     u.processClientMessage(u.getData(clientWithMessage),
-                                           messages, clientWithMessage)
+                                           messages, clientWithMessage, clients, names)
                 except:
                     logger.info(f'Client {clientWithMessage.getpeername()} '
                                 f'was disconnected from server.')
                     clients.remove(clientWithMessage)
 
-        if messages and sendDataList:
-            message = {
-                v.ACTION: v.MESSAGE,
-                v.SENDER: messages[0][0],
-                v.TIME: time.time(),
-                v.MESSAGE_TEXT: messages[0][1]
-            }
-            del messages[0]
-            for waitingClient in sendDataList:
-                try:
-                    u.sendData(waitingClient, message)
-                except:
-                    logger.info(f'Client {waitingClient.getpeername()} disconnected from the server.')
-                    waitingClient.close()
-                    clients.remove(waitingClient)
+
+
+                for message in messages:
+                    try:
+                        u.processMessage(message, names, sendDataList)
+                    except Exception:
+                        logger.info(f'Connection with user {message[v.DESTINATION]} was lost')
+                        clients.remove(names[message[v.DESTINATION]])
+                        del names[message[v.DESTINATION]]
+                messages.clear()
+
+        # if messages and sendDataList:
+        #     message = {
+        #         v.ACTION: v.MESSAGE,
+        #         v.SENDER: messages[0][0],
+        #         v.TIME: time.time(),
+        #         v.MESSAGE_TEXT: messages[0][1]
+        #     }
+        #     del messages[0]
+        #     for waitingClient in sendDataList:
+        #         try:
+        #             u.sendData(waitingClient, message)
+        #         except:
+        #             logger.info(f'Client {waitingClient.getpeername()} disconnected from the server.')
+        #             waitingClient.close()
+        #             clients.remove(waitingClient)
 
 
 
