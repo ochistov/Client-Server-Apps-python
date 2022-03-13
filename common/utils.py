@@ -26,7 +26,6 @@ def log(func):
     return call
 
 
-
 @log
 def getServerSocket(addr, port):
     s = socket.socket()
@@ -51,6 +50,7 @@ def getData(sender):
 
 @log
 def createServerParser():
+
     parser = argparse.ArgumentParser()
 
     parserGroup = parser.add_argument_group(title='Parameters')
