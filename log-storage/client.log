@@ -48,3 +48,139 @@
 2022-02-23 22:49:59,409 - INFO     - client   - Data received from ('127.0.0.1', 7777) : {'response': '404', 'time': '2022-02-23 22:49:25', 'alert': 'Not found'} 
 2022-02-23 22:49:59,409 - INFO     - client   - Response not equal 200, closing connection 
 2022-02-23 22:49:59,409 - DEBUG    - client   - Client.py will be stopped 
+2022-02-27 19:52:19,408 - DEBUG    - client   - Client.py started 
+2022-02-27 19:52:21,329 - DEBUG    - utils    - Function "createParser" is called into "<module>" 
+2022-02-27 19:52:21,344 - DEBUG    - utils    - Function "getClientSocket" is called into "<module>" 
+2022-02-27 19:52:21,344 - INFO     - client   - Connected to server: 127.0.0.1:7777 
+2022-02-27 20:27:54,878 - DEBUG    - client   - Client.py started 
+2022-02-27 20:27:57,452 - DEBUG    - utils    - Function "createClientParser" is called into "<module>" 
+2022-02-27 20:27:57,468 - DEBUG    - utils    - Function "getClientSocket" is called into "<module>" 
+2022-02-27 20:27:57,468 - DEBUG    - utils    - Function "createPresence" is called into "<module>" 
+2022-02-27 20:27:57,468 - DEBUG    - utils    - presence was formed for test1 
+2022-02-27 20:27:57,468 - DEBUG    - utils    - Function "sendData" is called into "<module>" 
+2022-02-27 20:27:57,468 - DEBUG    - utils    - Function "getData" is called into "<module>" 
+2022-02-27 20:27:57,970 - DEBUG    - utils    - Function "processResponseAns" is called into "<module>" 
+2022-02-27 20:27:57,970 - DEBUG    - utils    - Response answer from server: {'response': 400, 'error': 'Bad Request'} 
+2022-02-27 20:27:57,970 - ERROR    - client   - Server was retrieve error while establish connection: 400 : Bad Request 
+2022-02-27 20:28:20,381 - DEBUG    - client   - Client.py started 
+2022-02-27 20:28:23,146 - DEBUG    - utils    - Function "createClientParser" is called into "<module>" 
+2022-02-27 20:28:23,151 - DEBUG    - utils    - Function "getClientSocket" is called into "<module>" 
+2022-02-27 20:28:23,151 - DEBUG    - utils    - Function "createPresence" is called into "<module>" 
+2022-02-27 20:28:23,151 - DEBUG    - utils    - presence was formed for test1 
+2022-02-27 20:28:23,151 - DEBUG    - utils    - Function "sendData" is called into "<module>" 
+2022-02-27 20:28:23,167 - DEBUG    - utils    - Function "getData" is called into "<module>" 
+2022-02-27 20:28:23,666 - DEBUG    - utils    - Function "processResponseAns" is called into "<module>" 
+2022-02-27 20:28:23,666 - DEBUG    - utils    - Response answer from server: {'response': 400, 'error': 'Bad Request'} 
+2022-02-27 20:28:23,666 - ERROR    - client   - Server was retrieve error while establish connection: 400 : Bad Request 
+2022-02-27 20:28:33,405 - DEBUG    - client   - Client.py started 
+2022-02-27 20:28:50,739 - DEBUG    - utils    - Function "createClientParser" is called into "<module>" 
+2022-02-27 20:29:38,177 - DEBUG    - utils    - Function "getClientSocket" is called into "<module>" 
+2022-02-27 20:30:15,781 - DEBUG    - utils    - Function "createPresence" is called into "<module>" 
+2022-02-27 20:30:30,185 - DEBUG    - utils    - presence was formed for test1 
+2022-02-27 20:30:40,896 - DEBUG    - utils    - Function "sendData" is called into "<module>" 
+2022-02-27 20:31:03,951 - DEBUG    - utils    - Function "getData" is called into "<module>" 
+2022-02-27 20:31:30,806 - DEBUG    - utils    - Function "processResponseAns" is called into "<module>" 
+2022-02-27 20:31:36,571 - DEBUG    - utils    - Response answer from server: {'response': 400, 'error': 'Bad Request'} 
+2022-02-27 20:31:59,730 - ERROR    - client   - Server was retrieve error while establish connection: 400 : Bad Request 
+2022-02-27 20:41:08,240 - DEBUG    - client   - Client.py started 
+2022-02-27 20:41:08,271 - DEBUG    - utils    - Function "createClientParser" is called into "<module>" 
+2022-02-27 20:41:08,287 - DEBUG    - utils    - Function "getClientSocket" is called into "<module>" 
+2022-02-27 20:41:08,287 - DEBUG    - utils    - Function "createPresence" is called into "<module>" 
+2022-02-27 20:41:08,287 - DEBUG    - utils    - presence was formed for Guest 
+2022-02-27 20:41:08,287 - DEBUG    - utils    - Function "sendData" is called into "<module>" 
+2022-02-27 20:41:08,287 - DEBUG    - utils    - Function "getData" is called into "<module>" 
+2022-02-27 20:41:08,789 - DEBUG    - utils    - Function "processResponseAns" is called into "<module>" 
+2022-02-27 20:41:08,789 - DEBUG    - utils    - Response answer from server: {'response': 200} 
+2022-02-27 20:41:08,789 - INFO     - client   - Established connection to server. Server response: 200 : OK 
+2022-02-27 20:41:08,789 - DEBUG    - utils    - Function "createMessage" is called into "<module>" 
+2022-02-27 20:41:13,563 - DEBUG    - utils    - Message dictionary was formed: {'action': 'message', 'time': 1645983673.563957, 'account_name': 'Guest', 'mess_text': 'hello'} 
+2022-02-27 20:41:13,563 - DEBUG    - utils    - Function "sendData" is called into "<module>" 
+2022-02-27 20:41:13,563 - DEBUG    - utils    - Function "createMessage" is called into "<module>" 
+2022-02-27 20:41:16,817 - DEBUG    - utils    - Message dictionary was formed: {'action': 'message', 'time': 1645983676.8172667, 'account_name': 'Guest', 'mess_text': "hey'"} 
+2022-02-27 20:41:16,817 - DEBUG    - utils    - Function "sendData" is called into "<module>" 
+2022-02-27 20:41:16,817 - DEBUG    - utils    - Function "createMessage" is called into "<module>" 
+2022-02-27 20:41:23,317 - DEBUG    - client   - Client.py started 
+2022-02-27 20:41:23,348 - DEBUG    - utils    - Function "createClientParser" is called into "<module>" 
+2022-02-27 20:41:23,357 - DEBUG    - utils    - Function "getClientSocket" is called into "<module>" 
+2022-02-27 20:41:23,364 - DEBUG    - utils    - Function "createPresence" is called into "<module>" 
+2022-02-27 20:41:23,364 - DEBUG    - utils    - presence was formed for Guest 
+2022-02-27 20:41:23,364 - DEBUG    - utils    - Function "sendData" is called into "<module>" 
+2022-02-27 20:41:23,364 - DEBUG    - utils    - Function "getData" is called into "<module>" 
+2022-02-27 20:41:23,866 - DEBUG    - utils    - Function "processResponseAns" is called into "<module>" 
+2022-02-27 20:41:23,866 - DEBUG    - utils    - Response answer from server: {'response': 200} 
+2022-02-27 20:41:23,866 - INFO     - client   - Established connection to server. Server response: 200 : OK 
+2022-02-27 20:41:23,866 - DEBUG    - utils    - Function "getData" is called into "<module>" 
+2022-02-27 20:41:28,042 - DEBUG    - utils    - Message dictionary was formed: {'action': 'message', 'time': 1645983688.0422823, 'account_name': 'Guest', 'mess_text': "hey'"} 
+2022-02-27 20:41:28,042 - DEBUG    - utils    - Function "sendData" is called into "<module>" 
+2022-02-27 20:41:28,042 - DEBUG    - utils    - Function "createMessage" is called into "<module>" 
+2022-02-27 20:41:28,403 - DEBUG    - utils    - Function "messageFromServer" is called into "<module>" 
+2022-02-27 20:41:28,403 - INFO     - utils    - Received message from user Guest:
+hey' 
+2022-02-27 20:41:28,403 - DEBUG    - utils    - Function "getData" is called into "<module>" 
+2022-02-27 20:41:33,728 - DEBUG    - utils    - Message dictionary was formed: {'action': 'message', 'time': 1645983693.7286103, 'account_name': 'Guest', 'mess_text': 'wasssssup'} 
+2022-02-27 20:41:33,728 - DEBUG    - utils    - Function "sendData" is called into "<module>" 
+2022-02-27 20:41:33,728 - DEBUG    - utils    - Function "createMessage" is called into "<module>" 
+2022-02-27 20:41:33,932 - DEBUG    - utils    - Function "messageFromServer" is called into "<module>" 
+2022-02-27 20:41:33,932 - INFO     - utils    - Received message from user Guest:
+wasssssup 
+2022-02-27 20:41:33,932 - DEBUG    - utils    - Function "getData" is called into "<module>" 
+2022-02-27 20:41:39,713 - DEBUG    - utils    - Message dictionary was formed: {'action': 'message', 'time': 1645983699.7131677, 'account_name': 'Guest', 'mess_text': 'how are you'} 
+2022-02-27 20:41:39,713 - DEBUG    - utils    - Function "sendData" is called into "<module>" 
+2022-02-27 20:41:39,713 - DEBUG    - utils    - Function "createMessage" is called into "<module>" 
+2022-02-27 20:41:39,969 - DEBUG    - utils    - Function "messageFromServer" is called into "<module>" 
+2022-02-27 20:41:39,969 - INFO     - utils    - Received message from user Guest:
+how are you 
+2022-02-27 20:41:39,969 - DEBUG    - utils    - Function "getData" is called into "<module>" 
+2022-02-27 20:41:51,938 - INFO     - utils    - Keyboard interrupt. 
+2022-02-27 20:43:25,071 - DEBUG    - client   - Client.py started 
+2022-02-27 20:43:27,550 - DEBUG    - utils    - Function "createClientParser" is called into "<module>" 
+2022-02-27 20:43:27,568 - DEBUG    - utils    - Function "getClientSocket" is called into "<module>" 
+2022-02-27 20:43:27,568 - DEBUG    - utils    - Function "createPresence" is called into "<module>" 
+2022-02-27 20:43:27,568 - DEBUG    - utils    - presence was formed for Guest 
+2022-02-27 20:43:27,568 - DEBUG    - utils    - Function "sendData" is called into "<module>" 
+2022-02-27 20:43:27,582 - DEBUG    - utils    - Function "getData" is called into "<module>" 
+2022-02-27 20:43:28,069 - DEBUG    - utils    - Function "processResponseAns" is called into "<module>" 
+2022-02-27 20:43:28,069 - DEBUG    - utils    - Response answer from server: {'response': 200} 
+2022-02-27 20:43:28,069 - INFO     - client   - Established connection to server. Server response: 200 : OK 
+2022-02-27 20:43:28,069 - DEBUG    - utils    - Function "createMessage" is called into "<module>" 
+2022-02-27 20:43:33,469 - DEBUG    - client   - Client.py started 
+2022-02-27 20:43:36,957 - DEBUG    - utils    - Function "createClientParser" is called into "<module>" 
+2022-02-27 20:43:36,972 - DEBUG    - utils    - Function "getClientSocket" is called into "<module>" 
+2022-02-27 20:43:36,972 - DEBUG    - utils    - Function "createPresence" is called into "<module>" 
+2022-02-27 20:43:36,972 - DEBUG    - utils    - presence was formed for Guest 
+2022-02-27 20:43:36,972 - DEBUG    - utils    - Function "sendData" is called into "<module>" 
+2022-02-27 20:43:36,972 - DEBUG    - utils    - Function "getData" is called into "<module>" 
+2022-02-27 20:43:37,475 - DEBUG    - utils    - Function "processResponseAns" is called into "<module>" 
+2022-02-27 20:43:37,475 - DEBUG    - utils    - Response answer from server: {'response': 200} 
+2022-02-27 20:43:37,475 - INFO     - client   - Established connection to server. Server response: 200 : OK 
+2022-02-27 20:43:37,475 - DEBUG    - utils    - Function "getData" is called into "<module>" 
+2022-02-27 20:43:42,133 - DEBUG    - utils    - Message dictionary was formed: {'action': 'message', 'time': 1645983822.1335397, 'account_name': 'test1', 'mess_text': 'hello'} 
+2022-02-27 20:43:42,133 - DEBUG    - utils    - Function "sendData" is called into "<module>" 
+2022-02-27 20:43:42,133 - DEBUG    - utils    - Function "createMessage" is called into "<module>" 
+2022-02-27 20:43:42,510 - DEBUG    - utils    - Function "messageFromServer" is called into "<module>" 
+2022-02-27 20:43:42,510 - INFO     - utils    - Received message from user test1:
+hello 
+2022-02-27 20:43:42,510 - DEBUG    - utils    - Function "getData" is called into "<module>" 
+2022-02-27 20:43:48,024 - DEBUG    - utils    - Message dictionary was formed: {'action': 'message', 'time': 1645983828.0240445, 'account_name': 'test1', 'mess_text': 'it is just test'} 
+2022-02-27 20:43:48,024 - DEBUG    - utils    - Function "sendData" is called into "<module>" 
+2022-02-27 20:43:48,024 - DEBUG    - utils    - Function "createMessage" is called into "<module>" 
+2022-02-27 20:43:48,039 - DEBUG    - utils    - Function "messageFromServer" is called into "<module>" 
+2022-02-27 20:43:48,039 - INFO     - utils    - Received message from user test1:
+it is just test 
+2022-02-27 20:43:48,039 - DEBUG    - utils    - Function "getData" is called into "<module>" 
+2022-02-27 20:43:52,605 - DEBUG    - utils    - Message dictionary was formed: {'action': 'message', 'time': 1645983832.6052756, 'account_name': 'test1', 'mess_text': 'wow it works'} 
+2022-02-27 20:43:52,605 - DEBUG    - utils    - Function "sendData" is called into "<module>" 
+2022-02-27 20:43:52,605 - DEBUG    - utils    - Function "createMessage" is called into "<module>" 
+2022-02-27 20:43:53,060 - DEBUG    - utils    - Function "messageFromServer" is called into "<module>" 
+2022-02-27 20:43:53,060 - INFO     - utils    - Received message from user test1:
+wow it works 
+2022-02-27 20:43:53,060 - DEBUG    - utils    - Function "getData" is called into "<module>" 
+2022-02-27 20:43:58,019 - DEBUG    - utils    - Message dictionary was formed: {'action': 'message', 'time': 1645983838.019455, 'account_name': 'test1', 'mess_text': 'goodbye'} 
+2022-02-27 20:43:58,019 - DEBUG    - utils    - Function "sendData" is called into "<module>" 
+2022-02-27 20:43:58,019 - DEBUG    - utils    - Function "createMessage" is called into "<module>" 
+2022-02-27 20:43:58,082 - DEBUG    - utils    - Function "messageFromServer" is called into "<module>" 
+2022-02-27 20:43:58,082 - INFO     - utils    - Received message from user test1:
+goodbye 
+2022-02-27 20:43:58,082 - DEBUG    - utils    - Function "getData" is called into "<module>" 
+2022-02-27 20:44:01,462 - INFO     - utils    - Keyboard interrupt. 
+
